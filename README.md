@@ -16,6 +16,9 @@ php artisan preset ha-web
 * [Datatables.net](https://datatables.net/)
 * [laravel-datatables](https://github.com/yajra/laravel-datatables)
 
+## Screenshots
 
-
+![Categories](/.github/images/welcome.jpeg)
+![Index](/.github/images/index.jpeg)
+![Show](/.github/images/show.jpeg)
 
