@@ -1,0 +1,2 @@
+
+mix.copy('resources/lang/pt-br/datatables.json', 'public/lang/pt-br/datatables.json');

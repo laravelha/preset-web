@@ -1,0 +1,24 @@
+{
+    "decimal":        "",
+    "emptyTable":     "Sem dados disponíveis na tabela",
+    "info":           "<div class='resumo-itens-por-pagina small'>Exibindo itens _START_ a _END_ de _TOTAL_ no total</div>",
+    "infoEmpty":      "Exibindo 0 até 0 de 0 entradas",
+    "infoFiltered":   "Filtrado de _MAX_ entradas",
+    "infoPostFix":    "",
+    "thousands":      ",",
+    "lengthMenu":     "<div class='input-group input-group-sm casca-itens-por-pagina'><span class='input-group-addon'>Itens por página</span>_MENU_</div>",
+    "loadingRecords": "Carregando...",
+    "processing":     "Processando...",
+    "search":         "Busca:",
+    "zeroRecords":    "Nenhum item encontrado",
+    "paginate": {
+        "first":      "<span title='Ir para a primeira página' class='glyphicon glyphicon-fast-backward'></span>",
+        "last":       "<span title='Ir para a última página' class='glyphicon glyphicon-fast-forward'></span>",
+        "next":       "<span title='Ir para a próxima página' class='glyphicon glyphicon-step-forward'></span>",
+        "previous":   "<span title='Ir para a página anterior' class='glyphicon glyphicon-step-backward'></span>"
+    },
+    "aria": {
+        "sortAscending":  ": activate to sort column ascending",
+        "sortDescending": ": activate to sort column descending"
+    }
+}

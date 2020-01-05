@@ -1,0 +1,19 @@
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// bootstrap-datepicker
+@import "~bootstrap-datepicker/dist/css/bootstrap-datepicker.css";
+
+// select2
+@import "~select2/dist/css/select2.min.css";
+@import "../css/select2-bootstrap.min.css";
+
+/*
+ * Message
+ */
+.message-wrap {
+    margin-top: 20px;
+}

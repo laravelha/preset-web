@@ -1,0 +1,31 @@
+{
+    "name": "laravelha/preset-web",
+    "description": "Laravelha preset",
+    "keywords": ["Web", "Laravel", "Preset"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pedro Augusto",
+            "email": "pedro.e@ufv.br"
+        }
+    ],
+    "require": {
+        "davejamesmiller/laravel-breadcrumbs": "5.x",
+        "hieu-le/active": "^4.0",
+        "illuminate/support": "^6.0",
+        "laravelha/support": "^1.0.0",
+        "yajra/laravel-datatables-oracle": "9.7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Laravelha\\Web\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Laravelha\\Web\\PresetServiceProvider"
+            ]
+        }
+    }
+}
