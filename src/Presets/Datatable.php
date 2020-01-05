@@ -20,7 +20,6 @@ class Datatable extends Preset
         static::updatePackages();
         static::updateSass();
         static::updateBootstrapping();
-        static::updateLang();
         static::removeNodeModules();
     }
 
@@ -55,19 +54,5 @@ class Datatable extends Preset
     protected static function updateBootstrapping(): void
     {
         file_put_contents(resource_path('js/bootstrap.js'), file_get_contents(static::STUBSPATH . '/resources/js/bootstrap.stub'), FILE_APPEND);
-    }
-
-
-    /**
-     * Update the bootstrapping files.
-     *
-     * @return void
-     */
-    protected static function updateLang(): void
-    {
-        copy(static::STUBSPATH . '/resources/lang/pt-br/datatables.json', resource_path("/lang/pt-br/datatables.json"));
-        if(!strpos(file_get_contents(base_path('webpack.mix.js')), file_get_contents(static::STUBSPATH . '/webpack.mix.stub'))) {
-            file_put_contents(base_path('webpack.mix.js'), file_get_contents(static::STUBSPATH . '/webpack.mix.stub'),FILE_APPEND);
-        }
     }
 }
