@@ -32,7 +32,7 @@ class Datatable extends Preset
     protected static function updatePackageArray(array $packages): array
     {
         return [
-            'datatables.net-bs' => '^1.10.20',
+            'datatables.net-bs4' => '^1.10.20',
             ] + $packages;
     }
 

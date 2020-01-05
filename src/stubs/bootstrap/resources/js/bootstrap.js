@@ -1,11 +1,14 @@
 window._ = require('lodash');
 
-window.$ = window.jQuery = require('jquery');
-require('bootstrap');
+try {
+    window.Popper = require('popper.js').default;
+    window.$ = window.jQuery = require('jquery');
+
+    require('bootstrap');
+} catch (e) {}
 
 // bootstrap-datepicker
 require('bootstrap-datepicker');
-require('bootstrap-datepicker/dist/locales/bootstrap-datepicker.pt-BR.min.js');
 
 // select2
 require("select2");

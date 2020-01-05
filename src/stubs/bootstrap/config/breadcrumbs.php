@@ -23,7 +23,7 @@ return [
     |
     */
 
-    'view' => 'breadcrumbs::bootstrap3',
+    'view' => 'breadcrumbs::bootstrap4',
 
     /*
     |--------------------------------------------------------------------------

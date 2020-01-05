@@ -40,9 +40,10 @@ class Bootstrap extends Preset
         return array_merge([
             'cross-env' => '^5.1',
             'bootstrap' => '^4.0.0',
-            'jquery' => '^3.2.1',
             'bootstrap-datepicker' => '^1.9.0',
+            'jquery' => '^3.2.1',
             'jquery-mask-plugin' => '^1.14',
+            'popper.js' => '^1.12',
             'select2' => '^4.0.12'
         ], $packages);
     }
