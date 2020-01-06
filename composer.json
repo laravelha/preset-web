@@ -13,6 +13,7 @@
         "davejamesmiller/laravel-breadcrumbs": "5.x",
         "hieu-le/active": "^4.0",
         "illuminate/support": "^6.0",
+        "laravel/ui": "^1.1",
         "laravelha/support": "^1.0.0",
         "yajra/laravel-datatables-oracle": "9.7.2"
     },

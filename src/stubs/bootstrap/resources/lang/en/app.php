@@ -23,6 +23,7 @@ return [
     'delete' => 'Remove...',
     'delete.title' => 'Remove item :id',
     'delete.question' => 'Do you wish to remove :item below?',
+    'home' => 'Home',
     'lead' => 'This application is made with Laravel + Laravelha',
     'madeWithLaravel' => 'With Laravel everything is simpler, easier and more efficient!',
     'readMore' => 'See more',

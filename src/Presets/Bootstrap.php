@@ -14,17 +14,20 @@ class Bootstrap extends Preset
      *
      * @return void
      */
-    public static function install(): void
+    public static function install($withAuth = false): void
     {
         static::updatePackages();
         static::updateAssets();
         static::updateReadme();
         static::updatePhpUnit();
         static::updateLang();
-        static::updateErrorPages();
         static::setAppConfig();
-        static::updateLayoutViews();
-        static::updateWelcomePage();
+        static::updateLayoutViews($withAuth);
+        static::updateWelcomePage($withAuth);
+
+        if ($withAuth) {
+            static::createAuthViews();
+        }
 
         static::removeNodeModules();
     }
@@ -93,16 +96,6 @@ class Bootstrap extends Preset
     }
 
     /**
-     * Update Error Pages
-     *
-     * @return void
-     */
-    protected static function updateErrorPages() : void
-    {
-        File::copyDirectory(static::STUBSPATH.'/resources/views/errors', resource_path('views/errors'));
-    }
-
-    /**
      * Update app config file
      *
      * @return void
@@ -118,9 +111,11 @@ class Bootstrap extends Preset
      *
      * @return void
      */
-    protected static function updateLayoutViews() : void
+    protected static function updateLayoutViews($withAuth = false) : void
     {
-        File::copyDirectory(static::STUBSPATH.'/resources/views/layouts', resource_path('views/layouts'));
+        $authFolder = $withAuth ? '/auth' : '';
+
+        File::copyDirectory(static::STUBSPATH."{$authFolder}/resources/views/layouts", resource_path('views/layouts'));
     }
 
     /**
@@ -128,16 +123,28 @@ class Bootstrap extends Preset
      *
      * @return void
      */
-    protected static function updateWelcomePage(): void
+    protected static function updateWelcomePage($withAuth = false): void
     {
-        File::delete(base_path('routes/web.php'));
-        File::copy(static::STUBSPATH.'/routes/web.php', base_path('routes/web.php'));
+        File::append(base_path('routes/web.php'), file_get_contents(static::STUBSPATH.'/routes/web.php'));
         File::copy(static::STUBSPATH.'/resources/views/index.blade.php', resource_path('views/index.blade.php'));
         File::copy(static::STUBSPATH.'/app/Http/Controllers/IndexController.php', app_path('Http/Controllers/IndexController.php'));
 
+        $authFolder = $withAuth ? '/auth' : '';
+
         File::copy(static::STUBSPATH.'/config/breadcrumbs.php', config_path('breadcrumbs.php'));
-        File::copy(static::STUBSPATH.'/routes/breadcrumbs.php', base_path('routes/breadcrumbs.php'));
+        File::copy(static::STUBSPATH."{$authFolder}/routes/breadcrumbs.php", base_path('routes/breadcrumbs.php'));
 
         File::delete(resource_path('views/welcome.blade.php'));
+    }
+
+    /**
+     * Create auth controller
+     *
+     * @return void
+     */
+    protected static function createAuthViews(): void
+    {
+        File::copy(static::STUBSPATH.'/auth/resources/views/home.blade.php', resource_path('views/home.blade.php'));
+        File::copyDirectory(static::STUBSPATH.'/auth/resources/views/auth', resource_path('views/auth'));
     }
 }
