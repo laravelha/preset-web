@@ -23,9 +23,7 @@
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <!-- Left Side Of Navbar -->
-                        <ul class="navbar-nav mr-auto">
-
-                        </ul>
+                        @include('layouts.nav')
 
                         <!-- Right Side Of Navbar -->
                         <ul class="navbar-nav ml-auto">
