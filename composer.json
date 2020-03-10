@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "davejamesmiller/laravel-breadcrumbs": "^5.x",
+        "davejamesmiller/laravel-breadcrumbs": "^5.0",
         "illuminate/support": "^7.0",
         "laravel/ui": "^2.0",
         "laravelha/support": "^1.0",
