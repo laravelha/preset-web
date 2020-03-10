@@ -4,7 +4,7 @@ namespace Laravelha\Web;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Foundation\Console\PresetCommand;
+use Laravel\Ui\UiCommand;
 
 class PresetServiceProvider extends ServiceProvider
 {
@@ -15,7 +15,7 @@ class PresetServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        PresetCommand::macro('ha-web', function (Command $command) {
+        UiCommand::macro('ha-web', function (Command $command) {
 
             $options = $command->option('option');
 
