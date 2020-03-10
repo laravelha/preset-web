@@ -9,7 +9,7 @@ composer require laravelha/preset-web --dev
 ```
 2. Run command 
 ```shell script
-php artisan preset ha-web
+php artisan ui ha-web
 ```
 
 ## Requirements
