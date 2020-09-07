@@ -2,8 +2,9 @@
 
 namespace Laravelha\Web\Presets;
 
-use Illuminate\Support\Facades\File;
 use Laravel\Ui\Presets\Preset;
+use Symfony\Component\Process\Process;
+
 
 class Datatable extends Preset
 {
@@ -17,6 +18,10 @@ class Datatable extends Preset
      */
     public static function install()
     {
+        (new Process(['composer', 'require', 'yajra/laravel-datatables-oracle:^9.0'], base_path()))
+            ->setTimeout(null)
+            ->run();
+
         static::updatePackages();
         static::updateSass();
         static::updateBootstrapping();

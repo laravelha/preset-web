@@ -4,6 +4,7 @@ namespace Laravelha\Web\Presets;
 
 use Illuminate\Support\Facades\File;
 use Laravel\Ui\Presets\Preset;
+use Symfony\Component\Process\Process;
 
 class Bootstrap extends Preset
 {
@@ -16,6 +17,10 @@ class Bootstrap extends Preset
      */
     public static function install($withAuth = false): void
     {
+        (new Process(['composer', 'require', 'davejamesmiller/laravel-breadcrumbs:^5.0'], base_path()))
+            ->setTimeout(null)
+            ->run();
+
         static::updatePackages();
         static::updateAssets();
         static::updateReadme();
