@@ -19,11 +19,11 @@ class PresetServiceProvider extends ServiceProvider
 
             $options = $command->option('option');
 
-            if($this->withAuth($options)) {
+            if($command->option('auth')) {
                 $command->call('ui', ['type' => 'bootstrap', '--auth' => true, '--quiet' => true]);
             }
 
-            Presets\Bootstrap::install($this->withAuth($options));
+            Presets\Bootstrap::install($command->option('auth'));
 
             if($this->withDatatables($options)) {
                 Presets\Datatable::install();
@@ -33,16 +33,6 @@ class PresetServiceProvider extends ServiceProvider
             $command->comment('Please run "npm install && npm run dev" to compile your fresh scaffolding.');
         });
     }
-
-    /**
-     * @param array $options
-     * @return bool
-     */
-    private function withAuth(array $options)
-    {
-        return in_array('auth', $options);
-    }
-
 
     /**
      * @param array $options
