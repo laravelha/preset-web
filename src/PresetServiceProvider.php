@@ -19,11 +19,15 @@ class PresetServiceProvider extends ServiceProvider
 
             $options = $command->option('option');
 
-            if($this->withAuth($options))
+            if($this->withAuth($options)) {
                 $command->call('ui', ['type' => 'bootstrap', '--auth' => true, '--quiet' => true]);
+            }
 
             Presets\Bootstrap::install($this->withAuth($options));
-            Presets\Datatable::install();
+
+            if($this->withDatatables($options)) {
+                Presets\Datatable::install();
+            }
 
             $command->info('Laravelha scaffolding installed successfully.');
             $command->comment('Please run "npm install && npm run dev" to compile your fresh scaffolding.');
@@ -37,5 +41,15 @@ class PresetServiceProvider extends ServiceProvider
     private function withAuth(array $options)
     {
         return in_array('auth', $options);
+    }
+
+
+    /**
+     * @param array $options
+     * @return bool
+     */
+    private function withDatatables(array $options)
+    {
+        return in_array('datatables', $options);
     }
 }
