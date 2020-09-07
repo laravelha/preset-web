@@ -19,8 +19,6 @@ class PresetServiceProvider extends ServiceProvider
 
             $options = $command->option('option');
 
-            dd($options);
-
             if($this->withAuth($options)) {
                 $command->call('ui', ['type' => 'bootstrap', '--auth' => true, '--quiet' => true]);
             }
