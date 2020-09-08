@@ -59,6 +59,8 @@ class PresetServiceProvider extends ServiceProvider
 
 
         $command->call('ui', ['type' => 'tailwindcss', '--auth' => $command->option('auth'), '--quiet' => true]);
+
+        Presets\Tailwind::install();
     }
 
     /**
