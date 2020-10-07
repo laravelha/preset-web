@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "illuminate/support": "^7.0",
+        "illuminate/support": "^7.0|^8.0",
         "laravel/ui": "^2.0",
         "laravelha/support": "^1.0"
     },
